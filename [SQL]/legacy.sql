@@ -1,33 +1,10 @@
--- phpMyAdmin SQL Dump
--- version 5.2.1
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Generation Time: Aug 05, 2024 at 12:08 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
-
--- SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
--- START TRANSACTION;
--- SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `addon_account`
---
+-- ESX Tables
 
 CREATE TABLE `addon_account` (
   `name` varchar(60) NOT NULL,
   `label` varchar(100) NOT NULL,
   `shared` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 --
 -- Dumping data for table `addon_account`
@@ -53,7 +30,7 @@ CREATE TABLE `addon_account_data` (
   `account_name` varchar(100) DEFAULT NULL,
   `money` int(11) NOT NULL,
   `owner` varchar(40) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- --------------------------------------------------------
 
@@ -65,7 +42,7 @@ CREATE TABLE `addon_inventory` (
   `name` varchar(60) NOT NULL,
   `label` varchar(100) NOT NULL,
   `shared` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 --
 -- Dumping data for table `addon_inventory`
@@ -91,7 +68,7 @@ CREATE TABLE `addon_inventory_items` (
   `name` varchar(100) NOT NULL,
   `count` int(11) NOT NULL,
   `owner` varchar(40) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- --------------------------------------------------------
 
@@ -107,7 +84,7 @@ CREATE TABLE `billing` (
   `target` varchar(40) NOT NULL,
   `label` varchar(255) NOT NULL,
   `amount` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- --------------------------------------------------------
 
@@ -119,7 +96,7 @@ CREATE TABLE `cardealer_vehicles` (
   `id` int(11) NOT NULL,
   `vehicle` varchar(255) NOT NULL,
   `price` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- --------------------------------------------------------
 
@@ -131,7 +108,7 @@ CREATE TABLE `datastore` (
   `name` varchar(60) NOT NULL,
   `label` varchar(100) NOT NULL,
   `shared` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 --
 -- Dumping data for table `datastore`
@@ -159,7 +136,7 @@ CREATE TABLE `datastore_data` (
   `name` varchar(60) NOT NULL,
   `owner` varchar(40) DEFAULT NULL,
   `data` longtext DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- --------------------------------------------------------
 
@@ -172,7 +149,7 @@ CREATE TABLE `fine_types` (
   `label` varchar(255) DEFAULT NULL,
   `amount` int(11) DEFAULT NULL,
   `category` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 --
 -- Dumping data for table `fine_types`
@@ -244,7 +221,7 @@ CREATE TABLE `items` (
   `weight` int(11) NOT NULL DEFAULT 1,
   `rare` tinyint(4) NOT NULL DEFAULT 0,
   `can_remove` tinyint(4) NOT NULL DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 --
 -- Dumping data for table `items`
@@ -294,7 +271,7 @@ CREATE TABLE `jobs` (
   `name` varchar(50) NOT NULL,
   `label` varchar(50) DEFAULT NULL,
   `whitelisted` tinyint(1) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 --
 -- Dumping data for table `jobs`
@@ -330,7 +307,7 @@ CREATE TABLE `job_grades` (
   `salary` int(11) NOT NULL,
   `skin_male` longtext NOT NULL,
   `skin_female` longtext NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 --
 -- Dumping data for table `job_grades`
@@ -378,7 +355,7 @@ INSERT INTO `job_grades` (`id`, `job_name`, `grade`, `name`, `label`, `salary`, 
 CREATE TABLE `licenses` (
   `type` varchar(60) NOT NULL,
   `label` varchar(60) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 --
 -- Dumping data for table `licenses`
@@ -402,7 +379,7 @@ INSERT INTO `licenses` (`type`, `label`) VALUES
 CREATE TABLE `multicharacter_slots` (
   `identifier` varchar(60) NOT NULL,
   `slots` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- --------------------------------------------------------
 
@@ -416,7 +393,7 @@ CREATE TABLE `owned_properties` (
   `price` double NOT NULL,
   `rented` int(11) NOT NULL,
   `owner` varchar(60) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- --------------------------------------------------------
 
@@ -431,7 +408,7 @@ CREATE TABLE `owned_vehicles` (
   `type` varchar(20) NOT NULL DEFAULT 'car',
   `job` varchar(20) DEFAULT NULL,
   `stored` tinyint(4) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- --------------------------------------------------------
 
@@ -454,7 +431,7 @@ CREATE TABLE `properties` (
   `is_gateway` int(11) DEFAULT NULL,
   `room_menu` varchar(255) DEFAULT NULL,
   `price` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 --
 -- Dumping data for table `properties`
@@ -547,7 +524,7 @@ CREATE TABLE `rented_vehicles` (
   `base_price` int(11) NOT NULL,
   `rent_price` int(11) NOT NULL,
   `owner` varchar(22) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- --------------------------------------------------------
 
@@ -560,7 +537,7 @@ CREATE TABLE `shops` (
   `store` varchar(100) NOT NULL,
   `item` varchar(100) NOT NULL,
   `price` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 --
 -- Dumping data for table `shops`
@@ -585,7 +562,7 @@ CREATE TABLE `society_moneywash` (
   `identifier` varchar(60) NOT NULL,
   `society` varchar(60) NOT NULL,
   `amount` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- --------------------------------------------------------
 
@@ -613,7 +590,7 @@ CREATE TABLE `users` (
   `is_dead` tinyint(1) DEFAULT 0,
   `status` longtext DEFAULT NULL,
   `phone_number` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- --------------------------------------------------------
 
@@ -626,7 +603,7 @@ CREATE TABLE `user_contacts` (
   `identifier` varchar(60) NOT NULL,
   `name` varchar(100) NOT NULL,
   `number` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB
 
 -- --------------------------------------------------------
 
@@ -638,7 +615,7 @@ CREATE TABLE `user_licenses` (
   `id` int(11) NOT NULL,
   `type` varchar(60) NOT NULL,
   `owner` varchar(40) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- --------------------------------------------------------
 
@@ -652,7 +629,7 @@ CREATE TABLE `user_parkings` (
   `garage` varchar(60) DEFAULT NULL,
   `zone` int(11) NOT NULL,
   `vehicle` longtext DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- --------------------------------------------------------
 
@@ -665,7 +642,7 @@ CREATE TABLE `vehicles` (
   `model` varchar(60) NOT NULL,
   `price` int(11) NOT NULL,
   `category` varchar(60) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 --
 -- Dumping data for table `vehicles`
@@ -922,7 +899,7 @@ INSERT INTO `vehicles` (`name`, `model`, `price`, `category`) VALUES
 CREATE TABLE `vehicle_categories` (
   `name` varchar(60) NOT NULL,
   `label` varchar(60) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 --
 -- Dumping data for table `vehicle_categories`
@@ -953,7 +930,7 @@ CREATE TABLE `vehicle_sold` (
   `plate` varchar(50) NOT NULL,
   `soldby` varchar(50) NOT NULL,
   `date` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- --------------------------------------------------------
 
@@ -966,7 +943,7 @@ CREATE TABLE `weashops` (
   `zone` varchar(255) NOT NULL,
   `item` varchar(255) NOT NULL,
   `price` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 --
 -- Dumping data for table `weashops`
@@ -1290,7 +1267,3 @@ ALTER TABLE `user_parkings`
 ALTER TABLE `weashops`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
